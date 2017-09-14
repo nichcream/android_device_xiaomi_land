@@ -38,7 +38,7 @@ on early-init
     chmod 0755 /sys/kernel/debug
 
 on init
-    export LD_SHIM_LIBS "/system/vendor/lib64/lib-imsvt.so|libshims_ims.so:/system/bin/mm-qcamera-daemon|libshims_camera.so:/system/lib/hw/camera.msm8937.so|libshims_camera.so"
+    export LD_SHIM_LIBS "/system/vendor/lib64/lib-imsvt.so|libshims_ims.so:/system/bin/mm-qcamera-daemon|libshims_camera.so:/system/lib/hw/camera.msm8937.so|libshims_camera.so:/system/vendor/lib64/lib-imscamera.so|libshim_ims_camera.so"
 
     # Set permissions for persist partition
     mkdir /persist 0771 root system
@@ -405,7 +405,7 @@ on boot
     # Goodix Fingerprint
     chown system system /dev/goodix_fp
     chmod 0644 /dev/goodix_fp
-
+    
     setprop persist.sys.fp.vendor none
     start gx_fpd
 
@@ -655,7 +655,7 @@ service fingerprintd /system/bin/fingerprintd
     disabled
 
 service gx_fpd /system/bin/gx_fpd
-    class late_start
+    class core
     user root
     group system system
     oneshot
@@ -664,28 +664,25 @@ service gx_fpd /system/bin/gx_fpd
 on property:persist.sys.fp.vendor=switchf
     stop gx_fpd
     setprop persist.sys.fp.vendor searchf
-    start fingerprintd  
+    start fingerprintd
+    setprop fpc.fp.miui.token 0
     setprop ro.boot.fpsensor fpc
+    setprop ro.hardware.fingerprint searchf
+    setprop persist.sys.fp.onstart=1
 
 on property:persist.sys.fp.vendor=goodix
-    setprop ro.boot.fpsensor gdx
-
-on property:ro.boot.fpsensor=fpc
-    setprop persist.sys.fp.goodix 0
-    setprop ro.hardware.fingerprint fpc
-
-on property:ro.boot.fpsensor=gdx
-    setprop persist.sys.fp.goodix 1
-    setprop ro.hardware.fingerprint gdx
+   #start fingerprintd
+   setprop goodix.fp.miui.analyse 1
+   setprop goodix.fp.miui.token 0
+   setprop ro.boot.fpsensor gdx
+   setprop ro.hardware.fingerprint goodix
+   setprop persist.sys.fp.onstart=0
 
 on property:persist.sys.fp.onstart=0
    start gx_fpd
 
 on property:persist.sys.fp.onstart=1
    start fingerprintd 
-
-on property:ro.boot.fpsensor=gdx
-    setprop ro.hardware.fingerprint goodix
 
 # Start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon
