@@ -21,15 +21,14 @@ vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
 vendor/lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/rfsa/adsp/libscveTextReco_skel.so
 
+#APTX HD
+vendor/lib/libaptX-1.0.0-rel-Android21-ARMv7A.so
+vendor/lib/libaptXHD-1.0.0-rel-Android21-ARMv7A.so
+vendor/lib/libaptXScheduler.so
+
 # Audio
-etc/aanc_tuning_mixer.txt
-etc/audio_platform_info.xml
-etc/audio_platform_info_extcodec.xml
-etc/audio_policy.conf
 etc/drc/drc_cfg_5.1.txt
 etc/drc/drc_cfg_AZ.txt
-etc/mixer_paths.xml
-etc/mixer_paths_mtp.xml
 etc/mixer_paths_skuk.xml
 etc/mixer_paths_wcd9306.xml
 etc/mixer_paths_wcd9326.xml
@@ -41,16 +40,12 @@ etc/mixer_paths_qrd_skui.xml
 etc/mixer_paths_qrd_skum.xml
 etc/mixer_paths_qrd_skun.xml
 etc/mixer_paths_qrd_skuhf.xml
-etc/sound_trigger_mixer_paths.xml
 etc/sound_trigger_mixer_paths_wcd9306.xml
 etc/sound_trigger_mixer_paths_wcd9330.xml
 etc/sound_trigger_mixer_paths_wcd9335.xml
-etc/sound_trigger_platform_info.xml
 etc/surround_sound_3mic/surround_sound_rec_AZ.cfg
 etc/surround_sound_3mic/surround_sound_rec_5.1.cfg
-lib/hw/audio.primary.msm8937.so
 lib/soundfx/libdirac.so
-vendor/etc/audio_effects.conf
 vendor/etc/audio_output_policy.conf
 vendor/etc/diracmobile.config
 vendor/lib/libacdb-fts.so
@@ -146,6 +141,7 @@ vendor/lib64/libwqe.so
 vendor/lib64/libxml.so
 
 # Camera
+bin/mm-qcamera-app
 bin/mm-qcamera-daemon
 etc/camera/ofilm_s5k5e8_chromatix.xml
 etc/camera/ov13853_q13853a_chromatix.xml
@@ -180,6 +176,8 @@ etc/camera/s5k3m2xm_chromatix.xml
 etc/camera/s5k3m2xm_chromatix_bear.xml
 etc/camera/s5k3m2xx_chromatix.xml
 lib/libRecoFace.so
+lib/libmmcamera_interface.so
+lib/libmmjpeg_interface.so
 lib/libmorpho_memory_allocator.so
 lib/libmorpho_panorama.so
 vendor/lib/libFaceGrade.so
@@ -292,8 +290,8 @@ vendor/lib/libqomx_jpegenc_pipe.so
 vendor/lib/libqomx_jpegenc.so
 vendor/lib/libseemore.so
 vendor/lib/libtm_interface.so
-vendor/lib/libts_detected_face_hal.so
-vendor/lib/libts_face_beautify_hal.so
+-vendor/lib/libts_detected_face_hal.so
+-vendor/lib/libts_face_beautify_hal.so
 vendor/lib/libtrueportrait.so
 vendor/lib/libubifocus.so
 
@@ -1056,7 +1054,7 @@ etc/permissions/dpmapi.xml
 framework/com.qti.dpmframework.jar
 framework/dpmapi.jar
 framework/tcmclient.jar
--priv-app/dpmserviceapp/dpmserviceapp.apk
+#-priv-app/dpmserviceapp/dpmserviceapp.apk
 vendor/lib/libdpmctmgr.so
 vendor/lib/libdpmfdmgr.so
 vendor/lib/libdpmframework.so
@@ -1101,10 +1099,12 @@ vendor/lib64/libtzdrmgenprov.so
 # Fingerprint
 bin/gx_fpcmd
 bin/gx_fpd
-lib/hw/fingerprint.default.so
+lib/hw/fingerprint.msm8937.so #:lib/hw/fingerprint.msm8937.so
+lib/hw/fingerprint.searchf.so
 lib/libcom_fingerprints_service.so
-lib64/hw/fingerprint.default.so
+lib64/hw/fingerprint.msm8937.so #:lib64/hw/fingerprint.msm8937.so
 lib64/hw/fingerprint.goodix.so
+lib64/hw/fingerprint.searchf.so
 lib64/hw/gxfingerprint.default.so
 lib64/libcom_fingerprints_service.so
 lib64/libfp_client.so
@@ -1134,7 +1134,7 @@ lib/libloc_api_v02.so
 lib/libloc_ds_api.so
 lib64/libloc_api_v02.so
 lib64/libloc_ds_api.so
--priv-app/com.qualcomm.location/com.qualcomm.location.apk
+-priv-app/com.qualcomm.location/com.qualcomm.location.apk|ab8cd109897928265235f393a2e71250ec5d28af
 vendor/bin/slim_daemon
 vendor/lib/hw/flp.default.so
 vendor/lib/libalarmservice_jni.so
@@ -1175,6 +1175,9 @@ vendor/lib64/libulp2.so
 vendor/lib64/libxt_native.so
 vendor/lib64/libxtadapter.so
 vendor/lib64/libxtwifi_ulp_adaptor.so
+vendor/lib64/libDRPlugin.so
+vendor/lib64/libdrplugin_client.so
+vendor/lib64/libevent_observer.so
 
 # Graphics
 vendor/lib/egl/eglSubDriverAndroid.so
@@ -1197,20 +1200,25 @@ vendor/lib/libOpenCL.so
 vendor/lib/libRSDriver_adreno.so
 vendor/lib/libadreno_utils.so
 vendor/lib/libbccQTI.so
+vendor/lib/libc2d30-a3xx.so
+vendor/lib/libc2d30-a4xx.so
 vendor/lib/libc2d30-a5xx.so
 vendor/lib/libc2d30_bltlib.so
 vendor/lib/libgsl.so
 vendor/lib/libllvm-glnext.so
 vendor/lib/libllvm-qcom.so
+vendor/lib/libllvm-qgl.so
 vendor/lib/libmm-disp-apis.so
 vendor/lib/libmm-qdcm.so
 vendor/lib/libmmQSM.so
 vendor/lib/librs_adreno.so
 vendor/lib/librs_adreno_sha1.so
+vendor/lib/libsc-a2xx.so
 vendor/lib/libsc-a3xx.so
 vendor/lib/libscale.so
 vendor/lib/libsd_sdk_display.so
 vendor/lib/libsdm-disp-apis.so
+vendor/lib/hw/vulkan.msm8937.so
 vendor/lib64/egl/eglSubDriverAndroid.so
 vendor/lib64/egl/eglsubAndroid.so
 vendor/lib64/egl/libEGL_adreno.so
@@ -1231,6 +1239,8 @@ vendor/lib64/libOpenCL.so
 vendor/lib64/libRSDriver_adreno.so
 vendor/lib64/libadreno_utils.so
 vendor/lib64/libbccQTI.so
+vendor/lib64/libc2d30-a3xx.so
+vendor/lib64/libc2d30-a4xx.so
 vendor/lib64/libc2d30-a5xx.so
 vendor/lib64/libc2d30_bltlib.so
 vendor/lib64/libgsl.so
@@ -1253,6 +1263,7 @@ vendor/lib64/libsdm-diag.so
 vendor/lib64/libsdm-disp-apis.so
 vendor/lib64/libsdmextension.so
 vendor/lib64/libuiblur.so|4b3fabf5ded7c4af531abde681676fc5e9248494
+vendor/lib64/hw/vulkan.msm8937.so
 
 # Graphics firmware
 etc/firmware/a530_gpmu.fw2
@@ -1274,6 +1285,7 @@ usr/keylayout/synaptics_rmi4_i2c.kl
 # Keystore
 vendor/lib/hw/keystore.msm8937.so
 vendor/lib64/hw/keystore.msm8937.so
+vendor/lib64/hw/keystore.default.so
 
 # Listen
 vendor/lib/hw/sound_trigger.primary.msm8937.so
@@ -1282,17 +1294,11 @@ vendor/lib/libsmwrapper.so
 
 # Media
 etc/firmware/DE.o.msm8937
-etc/media_codecs_performance.xml
-etc/media_profiles.xml
-lib/libOmxSwVdec.so
-lib/libOmxSwVencMpeg4.so
 lib/libOmxVpp.so
 lib/libvpplibrary.so
-lib64/libOmxSwVdec.so
-lib64/libOmxSwVencMpeg4.so
 vendor/lib/libAlacSwDec.so
 vendor/lib/libApeSwDec.so
-vendor/lib/libFlacSwDec.so
+vendor/lib/libFlacSwDec.so|89c0b9af3d56cd73e07393f2c88ac657659ebf5c
 vendor/lib/libI420colorconvert.so
 vendor/lib/libMpeg4SwEncoder.so
 vendor/lib/libOmxAacDec.so
@@ -1307,12 +1313,9 @@ vendor/lib/libOmxWmaDec.so
 vendor/lib/libOmxMux.so
 vendor/lib/libmm-color-convertor.so
 vendor/lib/libmmosal.so
-vendor/lib/libstagefright_soft_flacdec.so
 vendor/lib/libvqzip.so
-vendor/lib64/libFlacSwDec.so
-vendor/lib64/libMpeg4SwEncoder.so
+vendor/lib64/libFlacSwDec.so|3029a270f91accb1ea9acd37cbdec6b30b5b6776
 vendor/lib64/libOmxMux.so
-vendor/lib64/libstagefright_soft_flacdec.so
 vendor/media/LMspeed_508.emd
 vendor/media/PFFprec_600.emd
 
@@ -1361,7 +1364,6 @@ vendor/lib64/libdisp-aba.so
 # QMI
 bin/irsc_util
 etc/permissions/qti_permissions.xml
-etc/sec_config
 vendor/lib/libdiag.so
 vendor/lib/libdsi_netctrl.so
 vendor/lib/libdsutils.so
@@ -1435,40 +1437,44 @@ vendor/lib64/libril-qc-qmi-1.so
 vendor/lib64/libril-qc-radioconfig.so
 vendor/lib64/libril-qcril-hook-oem.so
 vendor/lib64/libsystem_health_mon.so
+vendor/lib64/libril-qc-ltedirectdisc.so
+vendor/lib64/librilqmiservices.so
+vendor/lib64/libsettings.so
 vendor/qcril.db
 
-# Radio - IMS
-bin/ims_rtp_daemon
-bin/imscmservice
-bin/imsdatadaemon
-bin/imsqmidaemon
-etc/permissions/imscm.xml
-framework/imscmlibrary.jar
--vendor/app/ims/ims.apk
--vendor/app/imssettings/imssettings.apk
-vendor/lib64/lib-dplmedia.so
-vendor/lib64/lib-ims-rcscmjni.so
-vendor/lib64/lib-imsSDP.so
-vendor/lib64/lib-imscamera.so
-vendor/lib64/lib-imsdpl.so
-vendor/lib64/lib-imsqimf.so
-vendor/lib64/lib-imsrcs.so
-vendor/lib64/lib-imsrcscm.so
-vendor/lib64/lib-imsrcscmclient.so
-vendor/lib64/lib-imsrcscmservice.so
-vendor/lib64/lib-imss.so
-vendor/lib64/lib-imsvt.so
-vendor/lib64/lib-imsxml.so
-vendor/lib64/lib-rcsimssjni.so
-vendor/lib64/lib-rcsjni.so
-vendor/lib64/lib-rtpcommon.so
-vendor/lib64/lib-rtpcore.so
-vendor/lib64/lib-rtpdaemoninterface.so
-vendor/lib64/lib-rtpsl.so
-vendor/lib64/libimscamera_jni.so
-vendor/lib64/libimsmedia_jni.so
-vendor/lib64/librcc.so
-vendor/lib64/libvoice-svc.so
+# Radio - IMS - from oxygen (MiMax 2)
+bin/ims_rtp_daemon|2155d928832594933ebfb79ee29319ff5d3e250c
+bin/imscmservice|0b3cc1e3dedcbcfa60633db344c0f622f1812459
+bin/imsdatadaemon|e44dabe3dc093dade15691df8b4329495e614b1e
+bin/imsqmidaemon|35826dc5a6ad5a50a8df384884264156c85af782
+etc/permissions/imscm.xml|8b99ec26c783966bbea1fcb8e72c7c0206a4e802
+framework/imscmlibrary.jar|0c24d6540c06efede52169c1445272f43748180f
+framework/rcsimssettings.jar|566a0f637344ca3182aca33753e404977fc77ecc
+-vendor/app/ims/ims.apk|d9e709f6e4c5bb971ec33ea3538c8bc23856806a
+-vendor/app/imssettings/imssettings.apk|e652c67b7bf6863e0c3cddc9b80439788883ffd2
+vendor/lib64/lib-dplmedia.so|9f8c41a42240397f54441ba6cc1d975a22eefec5
+vendor/lib64/lib-ims-rcscmjni.so|af39ee3bd691d5316632a2d449254fbb42e30a09
+vendor/lib64/lib-imsSDP.so|270ba6d653e22fbae26cba740e55d62e02626569
+vendor/lib64/lib-imscamera.so|367a3dac5ba9fb426c1c42f46ac7447b7ee54285
+vendor/lib64/lib-imsdpl.so|a068014f6da6e909802e55c8196a3426fdf85464
+vendor/lib64/lib-imsqimf.so|59110009ea2dd9342107ed5efc8e8a69de7e5a2e
+vendor/lib64/lib-imsrcs.so|4fe3246b06b020400e303425c16eb054ac254ab6
+vendor/lib64/lib-imsrcscm.so|88dbc281980af7c357985024c8af7d1cd808f2a4
+vendor/lib64/lib-imsrcscmclient.so|a2e107589cbcb1c9093b9be9d6c641e5cd7ab9d7
+vendor/lib64/lib-imsrcscmservice.so|6e98d7b53bbd6595ff3adbc1daf4705dcdea2cb8
+vendor/lib64/lib-imss.so|291cd52ebbb726eba32ff1c0a35f67bd9f21a4a2
+vendor/lib64/lib-imsvt.so|ac8f07231bc9695de79bf33c63e800d190a47e22
+vendor/lib64/lib-imsxml.so|56709523b9a40af12a82310fbc80acb22fc67615
+vendor/lib64/lib-rcsimssjni.so|bb761b16808c895f4ea3e5a5e3d145a1a1530495
+vendor/lib64/lib-rcsjni.so|09d5ba4080ae73772e7d91a131b793a3f4dcb05b
+vendor/lib64/lib-rtpcommon.so|68212261f6630de34221f3936b16f71a6998c4f9
+vendor/lib64/lib-rtpcore.so|8be3e0beaeebd657283538d3498f4b800f889165
+vendor/lib64/lib-rtpdaemoninterface.so|a40b4a3f5ea4a6fc80191d35a3ec70653a724a06
+vendor/lib64/lib-rtpsl.so|132dd568be5b72e8e18f805e3d5542a5582a4f95
+vendor/lib64/libimscamera_jni.so|495e448209c2d57cb3a700d608f1bc0f0613baa5
+vendor/lib64/libimsmedia_jni.so|4d15b6dc9d583e4babec268a9ad4ab74af6c04f3
+vendor/lib64/librcc.so|c15caf544223810717267535eb375ae8ec2cc4b7
+vendor/lib64/libvoice-svc.so|33ccad4068cb4e4903c1408ffe8bd22033aefd27
 
 # Radio - MBN
 etc/firmware/modem_config/S88537AA1/cmcc_mcfg_sw.mbn
@@ -1486,10 +1492,12 @@ etc/firmware/modem_config/S88537CA1/row_mcfg_sw.mbn
 etc/firmware/modem_config/S88537EC1/reliance_mcfg_sw.mbn
 etc/firmware/modem_config/S88537EC1/row_mcfg_sw.mbn
 
+#IR
+lib/hw/consumerir.default.so
+lib64/hw/consumerir.default.so
+
 # Sensors
 bin/sensors.qcom
-etc/sensors/hals.conf
-etc/sensors/sensor_def_qcomdev.conf
 vendor/lib/hw/activity_recognition.msm8937.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
@@ -1511,7 +1519,7 @@ vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
 
 # Time services
--app/TimeService/TimeService.apk
+-app/TimeService/TimeService.apk|cf992f00c8e73463b26f0ea6828522a3edfcdbb4
 bin/time_daemon
 -vendor/lib/libtime_genoff.so
 vendor/lib/libTimeService.so
