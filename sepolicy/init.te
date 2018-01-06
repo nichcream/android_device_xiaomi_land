@@ -35,3 +35,8 @@ allow init video_device:chr_file { ioctl write };
 allow init debugfs_tracing:file { open read write };
 allow init sensors_device:chr_file { ioctl write };
 allow init vndbinder_device:chr_file { open read write ioctl };
+
+# Requied to load shim libs
+allow init cameraserver:process { noatsecure };
+allow init hal_camera:process { noatsecure };
+allow init mm-qcamerad:process { noatsecure };
