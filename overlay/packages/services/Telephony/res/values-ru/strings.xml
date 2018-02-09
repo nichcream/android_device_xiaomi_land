@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+  <string-array name="preferred_network_mode_choices">
+    <item>LTE/TDSCDMA/CDMA/EVDO/GSM/WCDMA</item>
+    <item>TDSCDMA/CDMA/EVDO/GSM/WCDMA</item>
+    <item>LTE/TDSCDMA/GSM/WCDMA</item>
+    <item>LTE/TDSCDMA/WCDMA</item>
+    <item>TDSCDMA/GSM/WCDMA</item>
+    <item>LTE/TDSCDMA/GSM</item>
+    <item>TDSCDMA/GSM</item>
+    <item>LTE/TDSCDMA</item>
+    <item>TDSCDMA/WCDMA</item>
+    <item>Только TDSCDMA</item>
+    <item>LTE/WCDMA</item>
+    <item>LTE</item>
+    <item>Весь мир</item>
+    <item>GSM/WCDMA/LTE</item>
+    <item>CDMA + LTE/EvDo</item>
+    <item>CDMA/EvDo/GSM/WCDMA</item>
+    <item>Только EvDo</item>
+    <item>CDMA без EvDo</item>
+    <item>CDMA/EvDo (авторежим)</item>
+    <item>GSM/WCDMA (авторежим)</item>
+    <item>Только WCDMA</item>
+    <item>Только GSM</item>
+    <item>GSM/WCDMA (предпочтительно)</item>
+  </string-array>
+</resources>
