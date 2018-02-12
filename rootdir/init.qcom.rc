@@ -492,7 +492,7 @@ on boot
 on class_start:late_start
     write /proc/sys/net/ipv6/conf/default/accept_ra_defrtr 1
 
-    copy /system/vendor/qcril.db /data/misc/radio/qcril.db
+    copy /vendor/qcril.db /data/misc/radio/qcril.db
     chown radio radio /data/misc/radio/qcril.db
     write /data/misc/radio/db_check_done 1
 
@@ -523,13 +523,13 @@ on property:vold.decrypt=trigger_restart_framework
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
 
-service cnd /system/vendor/bin/cnd
+service cnd /vendor/bin/cnd
     class main
     user system
     group system wifi inet radio wakelock net_admin
     #writepid /dev/cpuset/system-background/tasks
 
-service dpmQmiMgr /system/vendor/bin/dpmQmiMgr
+service dpmQmiMgr /vendor/bin/dpmQmiMgr
     class main
     user system
     group system
@@ -555,7 +555,7 @@ on property:wc_transport.start_hci=true
 on property:wc_transport.start_hci=false
     stop start_hci_filter
 
-service start_hci_filter /system/vendor/bin/wcnss_filter
+service start_hci_filter /vendor/bin/wcnss_filter
     class late_start
     user bluetooth
     group bluetooth diag system wakelock
@@ -569,7 +569,7 @@ on property:hw.fm.init=0
 on property:hw.fm.init=1
      write /sys/module/radio_iris_transport/parameters/fmsmd_set 1
 
-service port-bridge /system/vendor/bin/port-bridge
+service port-bridge /vendor/bin/port-bridge
     class main
     user radio system
     group radio system inet
@@ -582,7 +582,7 @@ on property:persist.data.mode=tethered
 on property:persist.data.mode=concurrent
     start port-bridge
 
-service netmgrd /system/vendor/bin/netmgrd
+service netmgrd /vendor/bin/netmgrd
     class main
 #    writepid /dev/cpuset/system-background/tasks
 
@@ -590,18 +590,18 @@ on property:ro.use_data_netmgrd=false
     # netmgr not supported on specific target
     stop netmgrd
 
-#service ipacm-diag /system/vendor/bin/ipacm-diag
+#service ipacm-diag /vendor/bin/ipacm-diag
 #    class main
 #    user radio
 #    socket ipacm_log_file dgram 660 radio radio
 #    group radio diag
 
-#service ipacm /system/vendor/bin/ipacm
+#service ipacm /vendor/bin/ipacm
 #    class main
 #    user radio
 #    group radio inet
 
-service qti /system/vendor/bin/qti
+service qti /vendor/bin/qti
     class main
     user radio
     group radio net_raw diag usb net_admin
@@ -639,7 +639,7 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     disabled
     oneshot
 
-service loc_launcher /system/vendor/bin/loc_launcher
+service loc_launcher /vendor/bin/loc_launcher
     #loc_launcher will start as root and set its uid to gps
     class late_start
     group gps inet oem_2901 wifi
@@ -697,7 +697,7 @@ on property:persist.radio.otaconfig=0
 on property:persist.radio.otaconfig=1
     setprop persist.radio.start_ota_daemon 1
 
-service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
+service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqbalance.conf
     class core
     user root
     group root
@@ -712,7 +712,7 @@ service wfdservice /system/bin/wfdservice
     disabled
     oneshot
 
-service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
+service qseeproxydaemon /vendor/bin/qseeproxydaemon
     class late_start
     user system
     group system
@@ -726,7 +726,7 @@ service poweroffhandler /system/bin/poweroffhandler
     oneshot
 
 # Start camera server as daemon
-service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
+service qcamerasvr /vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
@@ -754,24 +754,24 @@ service thermal-engine /vendor/bin/thermal-engine
     socket thermal-send-rule stream 0660 system system
     group root
 
-service time_daemon /system/vendor/bin/time_daemon
+service time_daemon /vendor/bin/time_daemon
     class main
     user root
     group root
 
-service wcnss-service /system/vendor/bin/wcnss_service
+service wcnss-service /vendor/bin/wcnss_service
     class main
     user system
     group system wifi radio
     oneshot
 
-service imsqmidaemon /system/vendor/bin/imsqmidaemon
+service imsqmidaemon /vendor/bin/imsqmidaemon
     class main
     user system
     socket ims_qmid stream 0660 system radio
     group radio log diag
 
-service imsdatadaemon /system/vendor/bin/imsdatadaemon
+service imsdatadaemon /vendor/bin/imsdatadaemon
     class main
     user system
     socket ims_datad stream 0660 system radio
@@ -781,13 +781,13 @@ service imsdatadaemon /system/vendor/bin/imsdatadaemon
 on property:vendor.ims.QMI_DAEMON_STATUS=1
     start imsdatadaemon
 
-service ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
+service ims_rtp_daemon /vendor/bin/ims_rtp_daemon
    class main
    user system
    group radio diag inet log
    disabled
 
-service vendor.imsrcsservice /system/vendor/bin/imsrcsd
+service vendor.imsrcsservice /vendor/bin/imsrcsd
    class main
    user system
    group radio diag inet log
@@ -830,13 +830,13 @@ on charger
     setprop persist.sys.usb.config mass_storage
     start hvdcp_opti
 
-service hbtp /system/vendor/bin/hbtp_daemon
+service hbtp /vendor/bin/hbtp_daemon
     class main
     user system
     group system
     disabled
 
-service adsprpcd /system/vendor/bin/adsprpcd
+service adsprpcd /vendor/bin/adsprpcd
     class main
     user media
     group media
@@ -859,12 +859,12 @@ on property:init.svc.per_mgr=running
 on property:sys.shutdown.requested=*
     stop per_proxy
 
-service hvdcp_opti /system/vendor/bin/hvdcp_opti
+service hvdcp_opti /vendor/bin/hvdcp_opti
     class main
     user root
     group root
 
-service mdtpd /system/vendor/bin/mdtpd
+service mdtpd /vendor/bin/mdtpd
     class late_start
     user root
     group system radio drmrpc

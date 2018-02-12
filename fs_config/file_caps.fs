@@ -17,13 +17,13 @@
 [AID_QTI_DIAG]
 value:2901
 
-[system/vendor/bin/imsdatadaemon]
+[vendor/bin/imsdatadaemon]
 user: AID_SYSTEM
 group: AID_SYSTEM
 mode: 0755
 caps: NET_BIND_SERVICE
 
-[system/vendor/bin/ims_rtp_daemon]
+[vendor/bin/ims_rtp_daemon]
 user: AID_SYSTEM
 group: AID_RADIO
 mode: 0755
@@ -35,7 +35,7 @@ group: AID_SYSTEM
 mode: 0755
 caps: NET_BIND_SERVICE
 
-[system/vendor/bin/pm-service]
+[vendor/bin/pm-service]
 user: AID_SYSTEM
 group: AID_SYSTEM
 mode: 0755
@@ -53,7 +53,7 @@ group: AID_BLUETOOTH
 mode: 0755
 caps: BLOCK_SUSPEND
 
-[system/vendor/bin/qvrservice]
+[vendor/bin/qvrservice]
 user: AID_SYSTEM
 group: AID_SYSTEM
 mode: 0755
@@ -71,7 +71,7 @@ user: AID_SYSTEM
 group: AID_SYSTEM
 caps: NET_BIND_SERVICE BLOCK_SUSPEND NET_ADMIN
 
-[system/vendor/bin/cnd]
+[vendor/bin/cnd]
 mode: 0755
 user: AID_SYSTEM
 group: AID_SYSTEM
@@ -83,7 +83,7 @@ user:  AID_GPS
 group: AID_GPS
 caps: NET_BIND_SERVICE
 
-[system/vendor/bin/slim_daemon]
+[vendor/bin/slim_daemon]
 mode: 0755
 user:  AID_GPS
 group: AID_GPS
