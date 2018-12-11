@@ -1,3 +1,0 @@
-allow vold proc_touchpanel:dir r_dir_perms;
-allow vold storage_stub_file:dir rw_dir_perms;
-

@@ -1,5 +1,0 @@
-allow surfaceflinger sysfs:file write;
-allow surfaceflinger hal_perf_hwservice:hwservice_manager find;
-
-binder_call(surfaceflinger, hal_perf_default)
-binder_use(surfaceflinger)

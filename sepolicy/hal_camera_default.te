@@ -1,6 +1,0 @@
-allow hal_camera_default camera_data_file:dir rw_dir_perms;
-allow hal_camera_default camera_data_file:file rw_file_perms;
-allow hal_camera_default camera_data_file:sock_file write;
-
-# For interfacing with PowerHAL
-hal_client_domain(hal_camera_default, hal_power)

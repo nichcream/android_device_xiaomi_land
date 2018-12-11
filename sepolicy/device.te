@@ -1,2 +1,0 @@
-type misc_partition, dev_type;
-#type persist_block_device, dev_type;

@@ -18,36 +18,10 @@
 
 set -e
 
-# Initial copyright year
-export INITIAL_COPYRIGHT_YEAR=2016
+export DEVICE=land
+export DEVICE_BRINGUP_YEAR=2016
 
-# Required!
-DEVICE=land
+DEVICE_COMMON=msm8937-common
 VENDOR=xiaomi
 
-# Load extract_utils and do some sanity checks
-MY_DIR="${BASH_SOURCE%/*}"
-if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
-
-LINEAGE_ROOT="$MY_DIR"/../../..
-
-HELPER="$LINEAGE_ROOT"/vendor/lineage/build/tools/extract_utils.sh
-if [ ! -f "$HELPER" ]; then
-    echo "Unable to find helper script at $HELPER"
-    exit 1
-fi
-. "$HELPER"
-
-# Initialize the helper
-setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT"
-
-# Copyright headers and guards
-write_headers
-
-# The standard blobs
-write_makefiles "$MY_DIR"/proprietary-files.txt
-echo "" >> "$PRODUCTMK"
-write_makefiles "$MY_DIR"/proprietary-files-qc.txt
-
-# We are done!
-write_footers
+./../../$VENDOR/$DEVICE_COMMON/setup-makefiles.sh $@

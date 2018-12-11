@@ -1,3 +1,0 @@
-# Note: This can disappear with new upstream commit
-# "sepolicy: Add label for usb power_supply device"
-allow hvdcp sysfs:file { read open };
