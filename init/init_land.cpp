@@ -126,10 +126,7 @@ static void variant_properties() {
     // Set variant based on board_id
     if (board_id == "S88537AB1") {
         property_override("ro.product.model", "Redmi 3X");
-        property_override("ro.vendor.product.device", "Redmi 3X");
-    } else {
-        property_override("ro.product.model", "Redmi 3S");
-        property_override("ro.vendor.product.device", "Redmi 3S");
+        property_override("ro.vendor.product.model", "Redmi 3X");
     }
 }
 
