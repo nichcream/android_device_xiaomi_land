@@ -971,13 +971,6 @@ lib64/libfp_client.so:vendor/lib64/libfp_client.so
 lib64/libfpnav.so:vendor/lib64/libfpnav.so
 lib64/libfpservice.so:vendor/lib64/libfpservice.so
 
-# Keylayout
-usr/keylayout/gpio-keys.kl:vendor/usr/keylayout/gpio-keys.kl
-usr/keylayout/qpnp_pon.kl:vendor/usr/keylayout/qpnp_pon.kl
-
-# Media - from santoni (Redmi 4X)
-etc/firmware/DE.o.msm8937:vendor/firmware/DE.o.msm8937
-
 # Radio - MBN
 etc/firmware/modem_config/S88537AA1/cmcc_mcfg_sw.mbn:vendor/firmware/modem_config/S88537AA1/cmcc_mcfg_sw.mbn
 etc/firmware/modem_config/S88537AA1/ct_mcfg_sw.mbn:vendor/firmware/modem_config/S88537AA1/ct_mcfg_sw.mbn
@@ -994,14 +987,7 @@ etc/firmware/modem_config/S88537CA1/row_mcfg_sw.mbn:vendor/firmware/modem_config
 etc/firmware/modem_config/S88537EC1/reliance_mcfg_sw.mbn:vendor/firmware/modem_config/S88537EC1/reliance_mcfg_sw.mbn
 etc/firmware/modem_config/S88537EC1/row_mcfg_sw.mbn:vendor/firmware/modem_config/S88537EC1/row_mcfg_sw.mbn
 
-# IR
-lib/hw/consumerir.default.so:vendor/lib/hw/consumerir.default.so
-lib64/hw/consumerir.default.so:vendor/lib64/hw/consumerir.default.so
-
 # Touchscreen
 etc/ft5336_biel_720p.ini:vendor/etc/ft5336_biel_720p.ini
 etc/ft5336_lens_720p.ini:vendor/etc/ft5336_lens_720p.ini
 etc/ft5336_oufei_720p.ini:vendor/etc/ft5336_oufei_720p.ini
-
-# USB
-etc/firmware/ice40.bin:vendor/firmware/ice40.bin
