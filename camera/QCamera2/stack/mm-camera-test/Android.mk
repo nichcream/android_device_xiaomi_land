@@ -20,6 +20,9 @@ LOCAL_CFLAGS += -D_ANDROID_ -DQCAMERA_REDEFINE_LOG
 # System header file path prefix
 LOCAL_CFLAGS += -DSYSTEM_HEADER_PREFIX=sys
 
+# Kernel headers
+LOCAL_CFLAGS += -DCONFIG_MACH_XIAOMI_LAND
+
 LOCAL_SRC_FILES:= \
         src/mm_qcamera_main_menu.c \
         src/mm_qcamera_app.c \
@@ -115,6 +118,9 @@ LOCAL_CFLAGS += -D_ANDROID_ -DQCAMERA_REDEFINE_LOG
 
 # System header file path prefix
 LOCAL_CFLAGS += -DSYSTEM_HEADER_PREFIX=sys
+
+# Kernel headers
+LOCAL_CFLAGS += -DCONFIG_MACH_XIAOMI_LAND
 
 LOCAL_SRC_FILES:= \
         src/mm_qcamera_main_menu.c \

@@ -50,6 +50,9 @@ endif
 # System header file path prefix
 LOCAL_CFLAGS += -DSYSTEM_HEADER_PREFIX=sys
 
+# Kernel headers
+LOCAL_CFLAGS += -DCONFIG_MACH_XIAOMI_LAND
+
 LOCAL_CFLAGS += -DHAS_MULTIMEDIA_HINTS -D_ANDROID
 
 
