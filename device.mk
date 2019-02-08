@@ -44,7 +44,8 @@ PRODUCT_PACKAGES += \
 
 # Init scripts ramdisk
 PRODUCT_PACKAGES += \
-    init.device.rc
+    init.device.rc \
+    init.baseband.sh
 
 # Keylayout
 PRODUCT_COPY_FILES += \

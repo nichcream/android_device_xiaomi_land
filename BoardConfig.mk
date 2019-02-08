@@ -38,5 +38,9 @@ TARGET_INIT_VENDOR_LIB         := libinit_land
 TARGET_PLATFORM_DEVICE_BASE    := /devices/soc/
 TARGET_RECOVERY_DEVICE_MODULES := libinit_land
 
+# SELinux
+BOARD_SEPOLICY_DIRS += \
+    $(DEVICE_PATH)/sepolicy
+
 # Inherit the proprietary files
 -include vendor/xiaomi/land/BoardConfigVendor.mk

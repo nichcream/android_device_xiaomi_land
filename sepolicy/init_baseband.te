@@ -1,0 +1,15 @@
+type init_baseband, domain;
+type init_baseband_exec, exec_type, vendor_file_type, file_type;
+
+# Allow for transition from init domain to init_baseband
+init_daemon_domain(init_baseband)
+
+# Shell script needs to execute /vendor/bin/sh
+allow init_baseband vendor_shell_exec:file { rx_file_perms entrypoint };
+allow init_baseband vendor_toolbox_exec:file rx_file_perms;
+
+# Allow reading modem firmware
+r_dir_file(init_baseband, firmware_file)
+
+# Allow setting gsm. property
+set_prop(init_baseband, radio_prop)
