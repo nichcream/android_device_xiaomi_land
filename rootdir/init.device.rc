@@ -1,5 +1,6 @@
 #start camera server as daemon
 service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
+    override
     class late_start
     user camera
     group camera system inet input graphics
