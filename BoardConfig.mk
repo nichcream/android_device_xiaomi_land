@@ -22,6 +22,7 @@ DEVICE_PATH := device/xiaomi/land
 
 # kernel
 TARGET_KERNEL_CONFIG 		:= land_defconfig
+TARGET_KERNEL_VERSION        := 4.9
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA   := true
