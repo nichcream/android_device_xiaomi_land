@@ -961,9 +961,7 @@ vendor/lib/libmmcamera_isp_color_correct40.so
 # Fingerprint
 bin/gx_fpcmd:vendor/bin/gx_fpcmd
 bin/gx_fpd:vendor/bin/gx_fpd
-lib/hw/fingerprint.default.so:vendor/lib/hw/fingerprint.msm8937.so
 lib/libcom_fingerprints_service.so:vendor/lib/libcom_fingerprints_service.so
-lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.msm8937.so
 lib64/hw/fingerprint.goodix.so:vendor/lib64/hw/fingerprint.goodix.so
 lib64/hw/gxfingerprint.default.so:vendor/lib64/hw/gxfingerprint.default.so
 lib64/libcom_fingerprints_service.so:vendor/lib64/libcom_fingerprints_service.so
