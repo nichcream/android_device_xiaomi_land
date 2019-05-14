@@ -470,7 +470,7 @@ int32_t QCameraPerfLock::lock_rel()
 void QCameraPerfLock::powerHintInternal(PowerHint hint, bool enable)
 {
 #ifdef HAS_MULTIMEDIA_HINTS
-    if (mPowerHal != nullptr && !mPowerHal->powerHint(hint, enable).isOk()) {
+    if (mPowerHal != nullptr && !mPowerHal->powerHintAsync(hint, enable).isOk()) {
         LOGE("Send powerhint to PowerHal failed");
     }
 #endif
