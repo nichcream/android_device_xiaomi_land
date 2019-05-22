@@ -605,6 +605,7 @@ void *QCamera3Stream::dataProcRoutine(void *data)
                     } else {
                         // no data cb routine, return buf here
                         pme->bufDone(frame->bufs[0]->buf_idx);
+                        free(frame);
                     }
                 }
             }
