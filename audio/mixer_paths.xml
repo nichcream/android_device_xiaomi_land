@@ -1117,7 +1117,6 @@
     <path name="handset-mic">
         <path name="adc1" />
         <ctl name="ADC1 Volume" value="8" />
-        <ctl name="DEC1 Volume" value="92" />
         <ctl name="IIR1 INP1 MUX" value="DEC1" />
     </path>
 
@@ -1276,8 +1275,6 @@
 <!-- +bug 196716,zhangjianming.wt,ADD,20160111,other can not reciving sound  -->
         <ctl name="ADC1 Volume" value="8" />
         <ctl name="ADC3 Volume" value="8" />
-        <ctl name="DEC1 Volume" value="92" />
-        <ctl name="DEC2 Volume" value="92" />
 <!-- -bug 196716,zhangjianming.wt,ADD,20160111,other can not reciving sound  -->
         <ctl name="DEC2 MUX" value="ADC1" />
         <ctl name="ADC1_INP1 Switch" value="1" />
